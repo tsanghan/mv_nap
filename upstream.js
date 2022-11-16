@@ -1,7 +1,7 @@
 async function resolv(r) {
     try {
-        let reply = await ngx.fetch('http://127.0.0.1:8090/api/7/http/requests');
-        let body = await reply.json();
+        const reply = await ngx.fetch('http://127.0.0.1:8090/api/7/http/requests');
+        const body = await reply.json();
 
         if (parseInt(body.current) > 145) {
             r.headersOut['upstream'] = "httpbin_server/delay/3";
